@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gridContainer {
+  /* width: 90%; */
+  /* max-width: 900px; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gridDivs {
+  border: 1px solid black;
+  background: blue;
+  cursor: pointer;
+  transition: all, .9s ease-out;
+}
+
+.green {
+  background: green;
+}
