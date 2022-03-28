@@ -4,11 +4,29 @@
   box-sizing: border-box;
 }
 
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .gridContainer {
-  /* width: 90%; */
-  /* max-width: 900px; */
+  width: 960px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.reconfig {
+  font-size: 2rem;
+  margin: 20px auto;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 25px;
+  background: blue;
+  color: white;
+  box-shadow: 2px 2px 5px 1px black;
+  cursor: pointer;
 }
 
 .gridDivs {

@@ -1,31 +1,39 @@
+// The Odin Project Javascript Basics --13. Project: Etch-a-Sketch
+// Allen Smith 2022
+
 let container = document.querySelector('.gridContainer');
-let gridNum = document.querySelector('.gridDivs');
+let resetBtn = document.querySelector('.reconfig')
+
+let cWidth = 960;
+let twoD = 64;
 
 
+function drawSquare(num) {
 
-
-let twoD = 10;
-
-function drawSquare() {
-
-
-  for (let i = 0; i < twoD; i++) {
-    // console.log("hello!")
-    for (let j = 0; j < twoD; j++) {
+  for (let i = 0; i < num; i++) {
+    for (let j = 0; j < num; j++) {
       cells = document.createElement('div');
       cells.classList.add('gridDivs');
-      cells.innerText = i;
-      intViewportWidth = window.innerWidth;
-      cells.style.width = intViewportWidth / twoD + "px";
+      intViewportHeight = window.innerHeight
+      cells.style.width = cWidth / num + "px";
+      cells.style.height = intViewportHeight / num + "px";
+
       container.appendChild(cells);
-      console.log(i + cells.style.width);
+
       cells.addEventListener("mouseenter", function(event) {
-        // highlight the mouseenter target
+        // change div background color
         event.target.style.background = "green";
-
       });
-    }
 
+    }
   }
+
 }
-drawSquare();
+
+resetBtn.addEventListener('click', function() {
+  container.innerHTML = ' ';
+  newNum = window.prompt('Please Choose a number between 2 and 100')
+  drawSquare(newNum);
+})
+
+drawSquare(twoD);
